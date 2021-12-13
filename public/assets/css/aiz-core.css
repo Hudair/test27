@@ -478,7 +478,7 @@ fixed-bottom 1030*/
 .bg-dark { background-color: var(--dark) !important; }
 .bg-soft-dark { background-color: var(--soft-dark) !important; }
 .bg-light { background-color: var(--light) !important; }
-.bg-black { background-color: #0d111b !important; }
+.bg-black { background-color: #f2c32b !important; }
 
 .hov-bg-primary:hover { background-color: var(--primary) !important; }
 .hov-bg-soft-primary:hover { background-color: var(--soft-primary) !important; }
