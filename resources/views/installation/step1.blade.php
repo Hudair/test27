@@ -57,7 +57,7 @@
                                 @if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1')
                                     <a href = "{{ route('step3') }}" class="btn btn-primary">Go To Next Step</a>
                                 @else
-                                    <a href = "{{ route('step2') }}" class="btn btn-primary">Go To Next Step</a>
+                                    <a href = "{{ route('step3') }}" class="btn btn-primary">Go To Next Step</a>
                                 @endif
                             @endif
                         </p>

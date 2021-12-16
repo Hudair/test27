@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::resource('auction_product_bids', 'AuctionProductBidController');
     Route::post('/auction/cart/show-cart-modal', 'CartController@showCartModalAuction')->name('auction.cart.showCartModal');
-    Route::get('/auction_products/purchase_history', 'AuctionProductController@purchase_history_user')->name('auction_product.purchase_history');
+    Route::get('/auction/purchase_history', 'AuctionProductController@purchase_history_user')->name('auction_product.purchase_history');
 });
 
 Route::post('/home/section/auction_products', 'HomeController@load_auction_products_section')->name('home.section.auction_products');

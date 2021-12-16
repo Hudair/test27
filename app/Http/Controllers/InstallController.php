@@ -25,9 +25,7 @@ class InstallController extends Controller
         return view('installation.step1', compact('permission'));
     }
 
-    public function step2() {
-        return view('installation.step2');
-    }
+    
 
     public function step3($error = "") {
         CoreComponentRepository::instantiateShopRepository();
@@ -95,7 +93,7 @@ class InstallController extends Controller
     }
 
     public function import_sql() {
-        $sql_path = base_path('shop.sql');
+        $sql_path = base_path('local_test27.sql');
         DB::unprepared(file_get_contents($sql_path));
         return redirect('step5');
     }
