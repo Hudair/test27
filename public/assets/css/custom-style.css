@@ -21,9 +21,9 @@ use custom-style.css
     --white: #fff;
     --gray: #6c757d;
     --gray-dark: #343a40;
-    --primary: #F77B0B;
-    --hov-primary: #E56F0E;
-    --soft-primary: rgba(247, 123, 11, 0.15);
+    --primary: #2568FB;
+    --hov-primary: #7400e8;
+    --soft-primary: #2568FB;
     --secondary: #8f97ab;
     --soft-secondary: rgba(143, 151, 171, 0.15);
     --success: #0abb75;
