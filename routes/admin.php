@@ -13,7 +13,7 @@
 
 Route::post('/update', 'UpdateController@step0')->name('update');
 Route::get('/update/step1', 'UpdateController@step1')->name('update.step1');
-
+Route::get('/update/step2', 'UpdateController@step2')->name('update.step2');
 
 Route::get('/admin', 'AdminController@admin_dashboard')->name('admin.dashboard')->middleware(['auth', 'admin']);
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {

@@ -166,7 +166,7 @@
                   <div class="card-body text-center">
                       @if(Auth::user()->seller->seller_package)
                         <img src="{{ uploaded_asset(Auth::user()->seller->seller_package->logo) }}" class="img-fluid mb-4 h-110px">
-                        <p class="mb-1 text-muted">{{ translate('Product Upload Remaining') }}: {{ Auth::user()->seller->seller_package->product_upload_limit }} {{ translate('Times')}}</p>
+                        <p class="mb-1 text-muted">{{ translate('Product Upload Limit') }}: {{ Auth::user()->seller->seller_package->product_upload_limit }} {{ translate('Times')}}</p>
                         <p class="text-muted mb-4">{{ translate('Package Expires at') }}: {{ Auth::user()->seller->invalid_at }}</p>
                         <h6 class="fw-600 mb-3 text-primary">{{ translate('Current Package') }}: {{ Auth::user()->seller->seller_package->name }}</h6>
                       @else

@@ -29,7 +29,7 @@ class UserController extends Controller
     public function getUserInfoByAccessToken(Request $request)
     {
         //$token = $request->bearerToken();
-        $token = $request->access_token;
+        // $token = $request->access_token;
 
         $false_response = [
             'result' => false,
@@ -41,23 +41,25 @@ class UserController extends Controller
             'phone' => ""
         ];
 
-        if($token == "" || $token == null){
-            return response()->json($false_response);
-        }
+        // if($token == "" || $token == null){
+        //     return response()->json($false_response);
+        // }
 
-        try {
-            $token_id = (new Parser())->parse($token)->getClaims()['jti']->getValue();
-        } catch (\Exception $e) {
-            return response()->json($false_response);
-        }
+        // try {
+        //     $token_id = (new Parser())->parse($token)->getClaims()['jti']->getValue();
+        // } catch (\Exception $e) {
+        //     return response()->json($false_response);
+        // }
 
-        $oauth_access_token_data =  DB::table('oauth_access_tokens')->where('id', '=', $token_id)->first();
+        // $oauth_access_token_data =  DB::table('oauth_access_tokens')->where('id', '=', $token_id)->first();
 
-        if($oauth_access_token_data == null){
-            return response()->json($false_response);
-        }
+        // if($oauth_access_token_data == null){
+        //     return response()->json($false_response);
+        // }
 
-        $user = User::where('id', $oauth_access_token_data->user_id)->first();
+        // $user = User::where('id', $oauth_access_token_data->user_id)->first();
+
+        $user = request()->user();
 
         if ($user == null) {
             return response()->json($false_response);

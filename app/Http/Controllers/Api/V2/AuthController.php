@@ -62,6 +62,10 @@ class AuthController extends Controller
         $customer = new Customer;
         $customer->user_id = $user->id;
         $customer->save();
+
+        //create token
+        $user->createToken('tokens')->plainTextToken;
+
         return response()->json([
             'result' => true,
             'message' => translate('Registration Successful. Please verify and log in to your account.'),
@@ -138,8 +142,7 @@ class AuthController extends Controller
                 if ($user->email_verified_at == null) {
                     return response()->json(['message' => translate('Please verify your account'), 'user' => null], 401);
                 }
-                $tokenResult = $user->createToken('Personal Access Token');
-                return $this->loginSuccess($tokenResult, $user);
+                return $this->loginSuccess($user);
             } else {
                 return response()->json(['result' => false, 'message' => translate('Unauthorized'), 'user' => null], 401);
             }
@@ -155,7 +158,8 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();
+        $request->user()->tokens()->delete();
+
         return response()->json([
             'result' => true,
             'message' => translate('Successfully logged out')
@@ -178,23 +182,18 @@ class AuthController extends Controller
             $customer->user_id = $user->id;
             $customer->save();
         }
-        $tokenResult = $user->createToken('Personal Access Token');
-        return $this->loginSuccess($tokenResult, $user);
+        return $this->loginSuccess($user);
     }
 
-    protected function loginSuccess($tokenResult, $user)
+    protected function loginSuccess($user)
     {
-        $token = $tokenResult->token;
-        $token->expires_at = Carbon::now()->addWeeks(100);
-        $token->save();
+        $token = $user->createToken('API Token')->plainTextToken;
         return response()->json([
             'result' => true,
             'message' => translate('Successfully logged in'),
-            'access_token' => $tokenResult->accessToken,
+            'access_token' => $token,
             'token_type' => 'Bearer',
-            'expires_at' => Carbon::parse(
-                $tokenResult->token->expires_at
-            )->toDateTimeString(),
+            'expires_at' => null,
             'user' => [
                 'id' => $user->id,
                 'type' => $user->user_type,

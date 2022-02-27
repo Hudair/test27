@@ -20,7 +20,7 @@ use App\OtpConfiguration;
 use App\Models\User;
 use App\Models\BusinessSetting;
 use App\Models\CombinedOrder;
-use App\SmsTemplate;
+use App\Models\SmsTemplate;
 use Auth;
 use Session;
 use DB;

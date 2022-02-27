@@ -52,8 +52,17 @@ class UpdateController extends Controller
     }
 
     public function step1() {
-        if(get_setting('current_version') == '5.5.2'){
+        if(get_setting('current_version') == '5.5.3'){
+            $sql_path = base_path('sqlupdates/v554.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            return redirect()->route('update.step2');
+        }
+        elseif(get_setting('current_version') == '5.5.2'){
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -63,6 +72,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -75,6 +87,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -90,6 +105,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -108,6 +126,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -129,6 +150,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -154,6 +178,9 @@ class UpdateController extends Controller
 
             $sql_path = base_path('sqlupdates/v553.sql');
             DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
+            DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
         }
@@ -177,6 +204,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -204,6 +234,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -234,6 +267,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -267,6 +303,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');
@@ -303,6 +342,9 @@ class UpdateController extends Controller
             DB::unprepared(file_get_contents($sql_path));
 
             $sql_path = base_path('sqlupdates/v553.sql');
+            DB::unprepared(file_get_contents($sql_path));
+            
+            $sql_path = base_path('sqlupdates/v554.sql');
             DB::unprepared(file_get_contents($sql_path));
 
             return redirect()->route('update.step2');

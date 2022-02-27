@@ -41,9 +41,9 @@ class RouteServiceProvider extends ServiceProvider
     
      $this->mapAffiliateRoutes();
     
-    $this->mapRefundRoutes();
+     $this->mapRefundRoutes();
     
-    $this->mapClubPointsRoutes();
+     $this->mapClubPointsRoutes();
     
      $this->mapOtpRoutes();
     
@@ -59,13 +59,13 @@ class RouteServiceProvider extends ServiceProvider
     
      $this->mapDeliveryBoyRoutes();
     
-    $this->mapAuctionRoutes();
+     $this->mapAuctionRoutes();
 
      $this->mapWholesaleRoutes();
     
      $this->mapWebRoutes();
 
-     // $this->mapInstallRoutes();
+    // $this->mapInstallRoutes();
 
     //$this->mapUpdateRoutes();
   }
